@@ -1,1 +1,4 @@
 assets/bootstrap/.sass-cache/
+/node_modules/
+/.sass-cache/
+/assets/bootstrap/css/
