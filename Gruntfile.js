@@ -33,7 +33,7 @@ module.exports = function(grunt){
         banner: '/* <%=pkg.name%> - v<%=pkg.version%> - <%=grunt.template.today("yyyy-mm-dd")%> */\n'
       },
       dist: {
-        src: ['assets/js/class/alert.js','assets/js/class/creater.js'],
+        src: ['assets/js/class/reservation.js','assets/js/class/creater.js','assets/js/class/message.js'],
         dest: 'assets/js/dest/<%=pkg.name%>.js',
       },
     },
@@ -57,4 +57,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('default',['clean','jshint','sass','concat','uglify']);
+  grunt.registerTask('build-css',['sass']);
+  grunt.registerTask('build-js',['jshint','concat','uglify']);
 }
