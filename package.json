@@ -1,7 +1,11 @@
 {
   "name": "mobile-tools",
   "version": "0.1.0",
-  "description": "phone demo for sdic.",
+  "description": "phone demo for mobile ports.",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/davehandong/phone-demo.git"
+  }
   "author": "davehandong",
   "license": "ISC",
   "devDependencies": {
