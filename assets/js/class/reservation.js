@@ -1,5 +1,5 @@
 var reserve = {
-	"mask":{
+	"mask": {
 		"tagName": "div",
 		"id": "masker",
 		"class": "mask"
@@ -7,14 +7,34 @@ var reserve = {
 	"alert": {
 		"tagName": "div",
 		"id": "alerter",
-		"class": "alert"
+		"class": "message",
+		"children": [
+			{"tagName":"div","class":"ui-bar" },
+			{
+				"tagName":"div",
+				"class":"message-content",
+				"children":[
+					{"tagName":"h3"},
+					{"tagName":"button","html":"确定"}
+				]
+			}
+		]
 	},
-	"title": {
+	"confirm": {
 		"tagName": "div",
-		"class": "ui-bar"
-	},
-	"content": {
-		"tagName": "div",
-		"class":"message-content"
+		"id": "confirmer",
+		"class": "message",
+		"children": [
+			{"tagName":"div","class":"ui-bar" },
+			{
+				"tagName":"div",
+				"class":"message-content",
+				"children":[
+					{"tagName":"h3"},
+					{"tagName":"button","id":"ok","html":"确定"},
+					{"tagName":"button","id":"cancel","html":"关闭"}
+				]
+			}
+		]
 	}
 };

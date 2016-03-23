@@ -1,16 +1,23 @@
 var creater = {
-	create:function(item){
-		var dom = document.createElement(item.tagName);
-		if(item.id)
-			dom.id = item.id;
-		if(item.name)
-			dom.name = item.name;
-		if(item.class)
-			dom.setAttribute('class', item.class);
-		if(item.style){
-			for(var key in item.style){
-				dom.style[key] = item.style[key];
-			}
+	base:function(domNode){
+		var dom = document.createElement(domNode.tagName);
+		if(domNode.id)
+			dom.id = domNode.id;
+		if(domNode.name)
+			dom.name = domNode.name;
+		if(domNode.class)
+			dom.setAttribute('class', domNode.class);
+		if(domNode.html)
+			dom.innerHTML = domNode.html;
+		return dom;
+	},
+	advanced: function(domNode){
+		var dom = this.base(domNode);
+		if(domNode.children){
+			$(domNode.children).each(function(index,item){
+				var childNode = creater.advanced(item);
+				dom.appendChild(childNode);
+			});
 		}
 		return dom;
 	}
