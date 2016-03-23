@@ -5,7 +5,7 @@
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/davehandong/phone-demo.git"
-  }
+  },
   "author": "davehandong",
   "license": "ISC",
   "devDependencies": {
