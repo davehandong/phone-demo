@@ -36,5 +36,13 @@ var reserve = {
         ]
       }
     ]
+  },
+  "tip":{
+    "tagName": "div",
+    "id": "tiper",
+    "class": "tip",
+    "children": [
+      {"tagName":"p"}
+    ]
   }
 };

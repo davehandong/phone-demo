@@ -101,7 +101,7 @@ h2 {
   right: 0px;
   bottom: 1px;
   z-index: 100;
-  background-color: gray;
+  background-color: darken(gray,10%);
   opacity: .5;
   filter: Alpha(Opacity=50);
 }
@@ -144,5 +144,18 @@ h2 {
       margin-left: 5px;
       margin-right: 5px;
     }
+  }
+}
+.tip{
+  position: absolute;
+  display: inline-block;
+  z-index: 101;
+  box-shadow: 0px 0px 12px rgba(0,0,0,.6);
+  border-radius: .6em;
+  border: 1px solid #f7c942;
+  background-image: linear-gradient(#fffadf,#fff3a5);
+  p{
+    margin: 30px;
+    color: #222;
   }
 }
