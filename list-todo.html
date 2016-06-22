@@ -12,6 +12,35 @@
     .list-group-item { height:120px; }
   </style>
   <script type="text/javascript">
+    var flag = true;
+    $(document).ready(function(){
+      var screenHeight = window.screen.height;
+      $(document).scroll(function(){
+        var scrollTop = document.body.scrollTop;
+        var scrollHeight = document.body.scrollHeight;
+        if(flag && scrollTop + screenHeight == scrollHeight){
+          flag = false;
+          loadData();
+        }
+      });
+    });
+    function loadData(){
+      var tip = document.createElement('div');
+      tip.style.height = '50px';
+      tip.setAttribute('class','list-group-item  list-bg');
+      tip.innerHTML = 'loading ......';
+      document.getElementById('list').appendChild(tip);
+      document.body.scrollTop = document.body.scrollHeight - window.screen.height;
+      setTimeout(function(){
+        document.getElementById('list').removeChild(tip);
+        var template = document.getElementById('template');
+        for(var ix = 0; ix < 5; ++ ix){
+          var tmp = template.cloneNode(true);
+          document.getElementById('list').appendChild(tmp);
+        }
+        flag = true;
+      },2000);
+    }
     function edit(){
       document.location.href = 'edit-out.html';
     }
@@ -23,8 +52,8 @@
     <a href="index.html" class="btn">Back</a>
   </div>
   <div class="container">
-    <div class="list-group">
-      <div class="list-group-item list-bg" onclick="edit()">
+    <div class="list-group" id="list">
+      <div class="list-group-item list-bg" onclick="edit()" id="template">
         <h3 class="list-title">There is the title</h3>
         <p class="list-desc">
           <span>Type:</span>
